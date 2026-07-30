@@ -29,9 +29,6 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
-    implementation 'org.springframework.boot:spring-boot-starter-aop'
-    implementation 'org.springframework.boot:spring-boot-starter-cache'
-    implementation 'org.springframework.boot:spring-boot-starter-mail'
 
     // JWT
     implementation 'io.jsonwebtoken:jjwt-api:0.12.5'
@@ -47,32 +44,12 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
-    // OpenAPI / Swagger
+    // OpenAPI / Swagger UI
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
-
-    // HTTP Client (for AI service calls)
-    implementation 'org.springframework.boot:spring-boot-starter-webflux'
-
-    // Jackson extras
-    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310'
-
-    // Rate Limiting (Bucket4j)
-    implementation 'com.bucket4j:bucket4j-core:8.10.1'
-    implementation 'com.bucket4j:bucket4j-redis:8.10.1'
-
-    // Retry
-    implementation 'org.springframework.retry:spring-retry'
-
-    // CSV / Excel Export
-    implementation 'org.apache.commons:commons-csv:1.10.0'
-    implementation 'org.apache.poi:poi-ooxml:5.2.5'
 
     // Testing
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
-    testImplementation 'com.h2database:h2'
-    testImplementation 'org.testcontainers:postgresql'
-    testImplementation 'org.testcontainers:junit-jupiter'
 }
 
 tasks.named('test') {
