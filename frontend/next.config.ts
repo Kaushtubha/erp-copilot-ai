@@ -1,0 +1,22 @@
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [{ protocol: 'https', hostname: '**' }],
+  },
+  async rewrites() {
+    return [
+      {
+        source: '/api/backend/:path*',
+        destination: `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8080'}/api/:path*`,
+      },
+      {
+        source: '/api/ai/:path*',
+        destination: `${process.env.NEXT_PUBLIC_AI_SERVICE_URL || 'http://localhost:8000'}/api/:path*`,
+      },
+    ]
+  },
+}
+
+export default nextConfig

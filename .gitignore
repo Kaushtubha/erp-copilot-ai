@@ -1,0 +1,51 @@
+# Environment
+.env
+.env.local
+*.env
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Node.js / Frontend
+node_modules/
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/build/
+.npm
+.yarn/
+*.log
+
+# Java / Gradle / Backend
+backend/.gradle/
+backend/build/
+backend/out/
+backend/bin/
+backend/.settings/
+backend/.classpath
+backend/.project
+*.class
+*.jar
+*.war
+
+# Python / FastAPI / AI Service
+__pycache__/
+*/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+ENV/
+ai-service/__pycache__/
+ai-service/*/__pycache__/
+
+# Qdrant / Local DB storage
+qdrant_storage/
+postgres_data/
