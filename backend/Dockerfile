@@ -2,7 +2,8 @@ FROM gradle:8.7-jdk21-alpine AS builder
 WORKDIR /app
 COPY settings.gradle build.gradle ./
 COPY src ./src
-RUN gradle bootJar --no-daemon -x test
+ENV GRADLE_OPTS="-Dorg.gradle.daemon=false -Dorg.gradle.jvmargs='-Xmx512m'"
+RUN gradle bootJar --no-daemon --stacktrace -x test
 
 FROM eclipse-temurin:21-jre-alpine
 WORKDIR /app
